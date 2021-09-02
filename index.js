@@ -8,7 +8,18 @@ app.get('/', (req, res) => {
   res.send('GraphQL is an amazint Query Language.')
 });
 
-const root = { hello: () => "Hi Money"};
+// const root = { hello: () => "Hi Money"};
+
+const root = { friend: () => {
+  return{
+    "id": 3422333,
+    "firstName": "Tuyen",
+    "lastName": "Dang",
+    "gender": "Male",
+    "email": "user@gmail.com"
+  }
+}};
+
 
 app.use('/graphql', graphqlHTTP({
   schema: schema,
